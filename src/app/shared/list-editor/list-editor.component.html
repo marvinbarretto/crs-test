@@ -1,0 +1,45 @@
+<!-- TODO: Decouple the modal logic from the list editor -->
+
+<div class="modal-overlay" (click)="close()">
+  <div class="list-editor" (click)="$event.stopPropagation()">
+    <header>
+      <h2>{{ petType === PetType.DOG ? 'Dog' : 'Cat' }} list editor</h2>
+      <button (click)="close()">Cancel</button>
+    </header>
+
+    <div class="lists">
+      <section class="subset">
+        <h3>Subset</h3>
+        <ul>
+          <li *ngFor="let pet of subset">
+            <span>
+              {{ pet.name }} <span class="traits">{{ pet.traits.join(', ')}}</span>
+            </span>
+            <button (click)="removeFromSubset(pet)">Remove</button>
+          </li>
+        </ul>
+        <div class="subset__actions">
+          @if (subset.length > 0) {
+            <button (click)="removeAllFromSubset()">Remove all from subset</button>
+          }
+
+          @if (subset.length !== superset.length) {
+            <button (click)="addAllFromSuperset()">Add all from the superset</button>
+          }
+        </div>
+      </section>
+
+      <section class="superset">
+        <h3>Superset</h3>
+        <ul>
+          <li *ngFor="let pet of superset">
+            <button (click)="addToSubset(pet)">👈 Add</button>
+            {{ pet.name }} <span class="traits">{{ pet.traits.join(', ')}}</span>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <button class="button--apply" (click)="applyChanges()">OK</button>
+  </div>
+</div>

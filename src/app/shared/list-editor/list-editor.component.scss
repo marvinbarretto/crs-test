@@ -1,0 +1,52 @@
+
+
+.list-editor {
+  background-color: white;
+  padding: 1rem;
+  width: 80vw;
+}
+
+.lists {
+  display: flex;
+  gap: 1rem;
+}
+
+section {
+  background-color: rgba(black, 0.1);
+  flex: 1;
+  padding: 1rem;
+}
+
+button {
+  padding: 2px 4px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: .5rem 0;
+}
+
+.button--apply {
+  background-color: darkgreen;
+  cursor: pointer;
+  color: white;
+  margin-top: 1rem;
+  width: 100%;
+  padding: .5rem 1rem;
+  &:hover {
+    background-color: rgba(darkgreen, 0.8);
+  }
+}
+
+.subset li {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.traits {
+  color: #666;
+  font-size: 0.8rem;
+  font-style: italic;
+}

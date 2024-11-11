@@ -1,0 +1,31 @@
+:host {
+  background-color: antiquewhite;
+  padding: 1rem;
+  flex: 1;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    background-color: #555;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  height: 100%;
+  align-items: flex-start;
+
+  ul {
+    height: 100%;
+  }
+}
